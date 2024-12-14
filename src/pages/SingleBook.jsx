@@ -4,7 +4,7 @@ import { CiStar } from "react-icons/ci";
 const SingleBook = () => {
     return (
         <div className="my-20">
-            <div className="flex gap-4 flex-col  md:flex-row">
+            <div className="flex gap-10 flex-col  md:flex-row">
                 <div className="bg-gray-50 rounded-2xl max-w-2xl">
                     <img src={bannerImg} alt="" />
                 </div>
@@ -43,20 +43,20 @@ const SingleBook = () => {
                     <table class="w-full">
                         <tbody>
                             <tr>
-                                <td class="px-4 py-2">Number of Pages:</td>
-                                <td class="px-4 py-2 font-semibold text-black">281</td>
+                                <td class="  py-2">Number of Pages:</td>
+                                <td class="  py-2 font-semibold text-black">281</td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2">Publisher</td>
-                                <td class="px-4 py-2 font-semibold text-black">J.B Lippincott & Co.</td>
+                                <td class="  py-2">Publisher</td>
+                                <td class="  py-2 font-semibold text-black">J.B Lippincott & Co.</td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2">Year of Publishing:</td>
-                                <td class="px-4 py-2 font-semibold text-black">1960</td>
+                                <td class="  py-2">Year of Publishing:</td>
+                                <td class="  py-2 font-semibold text-black">1960</td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2">Rating:</td>
-                                <td class="px-4 py-2 font-semibold text-black">4.8</td>
+                                <td class="  py-2">Rating:</td>
+                                <td class="  py-2 font-semibold text-black">4.8</td>
                             </tr>
                         </tbody>
                     </table>
