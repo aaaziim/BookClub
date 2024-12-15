@@ -1,7 +1,15 @@
+import { useLoaderData, useParams } from "react-router-dom";
 import bannerImg from "../assets/bannerImg.png"
 import { CiStar } from "react-icons/ci";
 
 const SingleBook = () => {
+    const { id } = useParams();
+    const books = useLoaderData();
+    console.log("Params ID:", id);
+
+    // const book = books.find(book => book.bookId === params.id)
+    // const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
+    // console.log(books)
     return (
         <div className="my-20">
             <div className="flex gap-10 flex-col  md:flex-row">
@@ -40,23 +48,23 @@ const SingleBook = () => {
                         </p>
                     </div>
                     <hr className="my-4 border-b-2 border-dotted" ></hr>
-                    <table class="w-full">
+                    <table className="w-full">
                         <tbody>
                             <tr>
-                                <td class="  py-2">Number of Pages:</td>
-                                <td class="  py-2 font-semibold text-black">281</td>
+                                <td className="  py-2">Number of Pages:</td>
+                                <td className="  py-2 font-semibold text-black">281</td>
                             </tr>
                             <tr>
-                                <td class="  py-2">Publisher</td>
-                                <td class="  py-2 font-semibold text-black">J.B Lippincott & Co.</td>
+                                <td className="  py-2">Publisher</td>
+                                <td className="  py-2 font-semibold text-black">J.B Lippincott & Co.</td>
                             </tr>
                             <tr>
-                                <td class="  py-2">Year of Publishing:</td>
-                                <td class="  py-2 font-semibold text-black">1960</td>
+                                <td className="  py-2">Year of Publishing:</td>
+                                <td className="  py-2 font-semibold text-black">1960</td>
                             </tr>
                             <tr>
-                                <td class="  py-2">Rating:</td>
-                                <td class="  py-2 font-semibold text-black">4.8</td>
+                                <td className="  py-2">Rating:</td>
+                                <td className="  py-2 font-semibold text-black">4.8</td>
                             </tr>
                         </tbody>
                     </table>

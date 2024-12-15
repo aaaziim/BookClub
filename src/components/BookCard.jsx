@@ -3,15 +3,14 @@ import bannerImg from "../assets/bannerImg.png"
 import { CiStar } from "react-icons/ci";
 const BookCard = ({ book }) => {
     const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
-    console.log(tags)
 
     return (
         <>
-            <NavLink to={`/listedbook/1`} className="border-2 border-slate-300 rounded-xl p-4 hover:scale-105 hover:border-[#23BE0A]  ">
+            <NavLink to={`/listedbook/${bookId}`} className="border-2 border-slate-300 rounded-xl p-4 hover:scale-105 hover:border-[#23BE0A]  ">
                 <img className="my-3 h-52 w-full rounded-xl bg-gray-200" src={image || bannerImg} />
                 <div className="flex gap-5">
                     {tags.map(tag =>
-                        <p className="text-[#23BE0A] font-semibold p-2 rounded-lg">
+                        <p key={tag} className="text-[#23BE0A] font-semibold p-2 rounded-lg">
                             #{tag}
                         </p>
                     )}

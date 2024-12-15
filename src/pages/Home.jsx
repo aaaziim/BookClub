@@ -1,10 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner";
 import BookCard from "../components/BookCard";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+    const loaderData = useLoaderData();
+    const [books, setBooks] = useState([]);
 
-    const books = useLoaderData();
+
+    useEffect(() => {
+        fetch('fakeData.json')
+            .then(res => res.json())
+            .then(data => setBooks(data))
+    }, [])
 
     return (
         <div>

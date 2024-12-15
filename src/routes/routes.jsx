@@ -17,11 +17,13 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/listedbooks",
+
                 element: <ListedBooks></ListedBooks>
             },
             {
                 path: "/listedbook/:id",
-                element: <SingleBook></SingleBook>
+
+                element: <SingleBook ></SingleBook>
             },
             {
                 path: "/pagestoread",
