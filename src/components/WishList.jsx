@@ -29,7 +29,7 @@ const WishList = () => {
             {books.map(book => <SingleBookList key={book.bookId}
                 book={book}
                 handleDelete={handleDelete}
-                wishlist={true}></SingleBookList>)}
+            ></SingleBookList>)}
 
 
         </>

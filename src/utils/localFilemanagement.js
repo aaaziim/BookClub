@@ -32,6 +32,15 @@ export const getWishlistFromLocalStorage = () => {
 export const saveWishlistToLocalStorage = (book) => {
 
     const wishList = getWishlistFromLocalStorage();
+    const readList = getBooksFromLocalStorage();
+
+    const isBookAlreadyInReadlist = readList.find(item => item.bookId == book.bookId)
+
+    if (isBookAlreadyInReadlist) {
+        return toast.error('Book is already in your Reading List!')
+
+    }
+
 
     const isBookAlreadyWishlisted = wishList.some(savedBook => savedBook.bookId === book.bookId);
 

@@ -3,7 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaUserFriends } from "react-icons/fa";
 import { MdInsertPageBreak } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-const SingleBookList = ({ book, handleDelete, wishlist }) => {
+const SingleBookList = ({ book, handleDelete }) => {
 
     const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
     return (
