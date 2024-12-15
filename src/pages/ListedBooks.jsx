@@ -10,9 +10,10 @@ const ListedBooks = () => {
             <div className="text-center">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="bg-[#23BE0A] px-4 py-2 rounded-lg text-white">Sort by <FaAngleDown className="inline" /></div>
-                    <ul tabIndex={0} className="dropdown-content menu bg-[#23BE0A] px-4 py-2 rounded-lg text-white z-[1] w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 2</a></li>
+                    <ul tabIndex={0} className="dropdown-content menu bg-gray-50 px-4 py-2 rounded-lg text-black z-[1] w-52 p-2 shadow">
+                        <li><a>Rating</a></li>
+                        <li><a>Number of pages</a></li>
+                        <li><a>Publisher year</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,98 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "The Silent Patient",
+        "author": "Alex Michaelides",
+        "image": "https://example.com/silent-patient.jpg",
+        "review": "A gripping psychological thriller with an unexpected twist.",
+        "totalPages": 336,
+        "rating": 4.5,
+        "category": "Fiction",
+        "tags": [
+            "Thriller",
+            "Psychological"
+        ],
+        "publisher": "Celadon Books",
+        "yearOfPublishing": 2019
+    },
+    {
+        "bookId": 2,
+        "bookName": "Educated",
+        "author": "Tara Westover",
+        "image": "https://example.com/educated.jpg",
+        "review": "An inspiring memoir about resilience and the power of education.",
+        "totalPages": 352,
+        "rating": 4.7,
+        "category": "Non-Fiction",
+        "tags": [
+            "Memoir",
+            "Inspiration"
+        ],
+        "publisher": "Random House",
+        "yearOfPublishing": 2018
+    },
+    {
+        "bookId": 3,
+        "bookName": "Atomic Habits",
+        "author": "James Clear",
+        "image": "https://example.com/atomic-habits.jpg",
+        "review": "A practical guide to building good habits and breaking bad ones.",
+        "totalPages": 320,
+        "rating": 4.8,
+        "category": "Self-Help",
+        "tags": [
+            "Productivity",
+            "Psychology"
+        ],
+        "publisher": "Avery",
+        "yearOfPublishing": 2018
+    },
+    {
+        "bookId": 4,
+        "bookName": "Dune",
+        "author": "Frank Herbert",
+        "image": "https://example.com/dune.jpg",
+        "review": "An epic science fiction saga with rich world-building and complex characters.",
+        "totalPages": 688,
+        "rating": 4.6,
+        "category": "Science Fiction",
+        "tags": [
+            "Adventure",
+            "Epic"
+        ],
+        "publisher": "Chilton Books",
+        "yearOfPublishing": 1965
+    },
+    {
+        "bookId": 5,
+        "bookName": "Becoming",
+        "author": "Michelle Obama",
+        "image": "https://example.com/becoming.jpg",
+        "review": "A deeply personal and inspiring memoir from the former First Lady.",
+        "totalPages": 448,
+        "rating": 4.9,
+        "category": "Biography",
+        "tags": [
+            "Leadership",
+            "Empowerment"
+        ],
+        "publisher": "Crown Publishing Group",
+        "yearOfPublishing": 2018
+    },
+    {
+        "bookId": 6,
+        "bookName": "1984",
+        "author": "George Orwell",
+        "image": "https://example.com/1984.jpg",
+        "review": "A chilling depiction of a dystopian society under constant surveillance.",
+        "totalPages": 328,
+        "rating": 4.8,
+        "category": "Fiction",
+        "tags": [
+            "Dystopian",
+            "Political"
+        ],
+        "publisher": "Secker & Warburg",
+        "yearOfPublishing": 1949
+    }
+]
