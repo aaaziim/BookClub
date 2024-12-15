@@ -1,159 +1,39 @@
 import { NavLink } from "react-router-dom";
 import bannerImg from "../assets/bannerImg.png"
 import { CiStar } from "react-icons/ci";
-const BookCard = () => {
+const BookCard = ({ book }) => {
+    const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
+    console.log(tags)
+
     return (
         <>
             <NavLink to={`/listedbook/1`} className="border-2 border-slate-300 rounded-xl p-4 hover:scale-105 hover:border-[#23BE0A]  ">
-                <img className="my-3 rounded-xl bg-gray-200" src={bannerImg} />
+                <img className="my-3 h-52 w-full rounded-xl bg-gray-200" src={image || bannerImg} />
                 <div className="flex gap-5">
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Young Adult
-                    </p>
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Identity
-                    </p>
+                    {tags.map(tag =>
+                        <p className="text-[#23BE0A] font-semibold p-2 rounded-lg">
+                            #{tag}
+                        </p>
+                    )}
+
+
                 </div>
-                <p className="text-2xl font-bold text-black my-2">The Catcher in the Rye</p>
+                <p className="text-2xl font-bold text-black my-2">{bookName}</p>
                 <p className="text-gray-400 ">
-                    By : Awlad Hossain
+                    By : {author}
                 </p>
                 <hr className="my-4 border-b-2 border-dotted" ></hr>
                 <div className="flex gap-4 justify-between ">
 
                     <p className="text-gray-400 ">
-                        Fiction
+                        {category}
                     </p>
                     <p className="text-gray-400 flex gap-3 items-center">
-                        5.00 <span> <CiStar className="text-2xl" /></span>
+                        {rating} <span> <CiStar className="text-2xl" /></span>
                     </p>
                 </div>
             </NavLink>
-            <NavLink to={`/listedbook/1`} className="border-2 border-slate-300 rounded-xl p-4 hover:scale-105 hover:border-[#23BE0A]  ">
-                <img className="my-3 rounded-xl bg-gray-200" src={bannerImg} />
-                <div className="flex gap-5">
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Young Adult
-                    </p>
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Identity
-                    </p>
-                </div>
-                <p className="text-2xl font-bold text-black my-2">The Catcher in the Rye</p>
-                <p className="text-gray-400 ">
-                    By : Awlad Hossain
-                </p>
-                <hr className="my-4 border-b-2 border-dotted" ></hr>
-                <div className="flex gap-4 justify-between ">
 
-                    <p className="text-gray-400 ">
-                        Fiction
-                    </p>
-                    <p className="text-gray-400 flex gap-3 items-center">
-                        5.00 <span> <CiStar className="text-2xl" /></span>
-                    </p>
-                </div>
-            </NavLink>
-            <NavLink to={`/listedbook/1`} className="border-2 border-slate-300 rounded-xl p-4 hover:scale-105 hover:border-[#23BE0A]  ">
-                <img className="my-3 rounded-xl bg-gray-200" src={bannerImg} />
-                <div className="flex gap-5">
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Young Adult
-                    </p>
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Identity
-                    </p>
-                </div>
-                <p className="text-2xl font-bold text-black my-2">The Catcher in the Rye</p>
-                <p className="text-gray-400 ">
-                    By : Awlad Hossain
-                </p>
-                <hr className="my-4 border-b-2 border-dotted" ></hr>
-                <div className="flex gap-4 justify-between ">
-
-                    <p className="text-gray-400 ">
-                        Fiction
-                    </p>
-                    <p className="text-gray-400 flex gap-3 items-center">
-                        5.00 <span> <CiStar className="text-2xl" /></span>
-                    </p>
-                </div>
-            </NavLink>
-            <NavLink to={`/listedbook/1`} className="border-2 border-slate-300 rounded-xl p-4 hover:scale-105 hover:border-[#23BE0A]  ">
-                <img className="my-3 rounded-xl bg-gray-200" src={bannerImg} />
-                <div className="flex gap-5">
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Young Adult
-                    </p>
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Identity
-                    </p>
-                </div>
-                <p className="text-2xl font-bold text-black my-2">The Catcher in the Rye</p>
-                <p className="text-gray-400 ">
-                    By : Awlad Hossain
-                </p>
-                <hr className="my-4 border-b-2 border-dotted" ></hr>
-                <div className="flex gap-4 justify-between ">
-
-                    <p className="text-gray-400 ">
-                        Fiction
-                    </p>
-                    <p className="text-gray-400 flex gap-3 items-center">
-                        5.00 <span> <CiStar className="text-2xl" /></span>
-                    </p>
-                </div>
-            </NavLink>
-            <NavLink to={`/listedbook/1`} className="border-2 border-slate-300 rounded-xl p-4 hover:scale-105 hover:border-[#23BE0A]  ">
-                <img className="my-3 rounded-xl bg-gray-200" src={bannerImg} />
-                <div className="flex gap-5">
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Young Adult
-                    </p>
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Identity
-                    </p>
-                </div>
-                <p className="text-2xl font-bold text-black my-2">The Catcher in the Rye</p>
-                <p className="text-gray-400 ">
-                    By : Awlad Hossain
-                </p>
-                <hr className="my-4 border-b-2 border-dotted" ></hr>
-                <div className="flex gap-4 justify-between ">
-
-                    <p className="text-gray-400 ">
-                        Fiction
-                    </p>
-                    <p className="text-gray-400 flex gap-3 items-center">
-                        5.00 <span> <CiStar className="text-2xl" /></span>
-                    </p>
-                </div>
-            </NavLink>
-            <NavLink to={`/listedbook/1`} className="border-2 border-slate-300 rounded-xl p-4 hover:scale-105 hover:border-[#23BE0A]  ">
-                <img className="my-3 rounded-xl bg-gray-200" src={bannerImg} />
-                <div className="flex gap-5">
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Young Adult
-                    </p>
-                    <p className="text-[#23BE0A] p-2 rounded-lg">
-                        Identity
-                    </p>
-                </div>
-                <p className="text-2xl font-bold text-black my-2">The Catcher in the Rye</p>
-                <p className="text-gray-400 ">
-                    By : Awlad Hossain
-                </p>
-                <hr className="my-4 border-b-2 border-dotted" ></hr>
-                <div className="flex gap-4 justify-between ">
-
-                    <p className="text-gray-400 ">
-                        Fiction
-                    </p>
-                    <p className="text-gray-400 flex gap-3 items-center">
-                        5.00 <span> <CiStar className="text-2xl" /></span>
-                    </p>
-                </div>
-            </NavLink>
 
         </>
 

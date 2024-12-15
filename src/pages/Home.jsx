@@ -1,7 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner";
 import BookCard from "../components/BookCard";
 
 const Home = () => {
+
+    const books = useLoaderData();
+
     return (
         <div>
             <Banner></Banner>
@@ -14,7 +18,11 @@ const Home = () => {
                 {/* Books Container */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-20">
 
-                    <BookCard></BookCard>
+                    {books.map(book => <BookCard
+                        key={book.bookId}
+                        book={book}></BookCard>)}
+
+
 
                 </div>
 
