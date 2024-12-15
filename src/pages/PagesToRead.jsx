@@ -1,50 +1,55 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { getBooksFromLocalStorage } from '../utils/localFilemanagement';
 
+const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+
+
+const getPath = (x, y, width, height) => {
+    return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
+    ${x + width / 2}, ${y}
+    C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${x + width}, ${y + height}
+    Z`;
+};
+
+const TriangleBar = (props) => {
+    const { fill, x, y, width, height } = props;
+
+    return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
+};
 const PagesToRead = () => {
-    // Sample data
-    const readList = [
-        { name: 'Book A', totalPages: 300 },
-        { name: 'Book B', totalPages: 450 },
-        { name: 'Book C', totalPages: 150 },
-    ];
 
-    // Custom shape for the bar
-    const CustomBarShape = (props) => {
-        const { x, y, width, height, fill } = props;
-        return (
-            <g>
-                <rect x={x} y={y} width={width} height={height} fill={fill} rx="10" />
-                <text
-                    x={x + width / 2}
-                    y={y - 10}
-                    fill="#000"
-                    textAnchor="middle"
-                    fontSize="12px"
-                >
-                    {height}
-                </text>
-            </g>
-        );
-    };
+    const booksInReadList = getBooksFromLocalStorage();
+
+    const data = booksInReadList.map(book => ({
+        bookName: book.bookName,
+        totalPages: book.totalPages
+    }));
 
     return (
-        <div style={{ width: '100%', height: '500px', textAlign: 'center', marginTop: '20px' }}>
-            <h1>Pages to Read</h1>
-            <ResponsiveContainer width="90%" height="80%">
-                <BarChart data={readList} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar
-                        dataKey="totalPages"
-                        fill="#8884d8"
-                        shape={<CustomBarShape />}
-                        barSize={50}
-                    />
-                </BarChart>
-            </ResponsiveContainer>
+        <div className="min-h-screen flex justify-center items-center">
+            <BarChart
+                width={700}
+                height={400}
+                data={data}
+                margin={{
+                    top: 20,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="bookName" />
+                <YAxis />
+                <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                    {data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+                    ))}
+                </Bar>
+            </BarChart>
         </div>
+
     );
 };
 
