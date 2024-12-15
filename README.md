@@ -1,5 +1,6 @@
 Website Name : BookClub
-Live link : parsimonious-beam.surge.sh
+<br>
+Live link : <a href="https://parsimonious-beam.surge.sh/">Visit site</a> 
 
 ### **Interactivity Functionality List**
 
@@ -10,7 +11,7 @@ Live link : parsimonious-beam.surge.sh
   - *View the List* button redirects to the *Listed Books* page.
 
 - **Book Cards:**
-  - Clicking on a book card redirects to the dynamic *Book Details* page.
+  - Clicking on a book card redirects to the dynamic *Book Details* page where we have spinners for loading time then the book details.
 
 - **Read and Wishlist Buttons:**
   - Adds books to *Read* or *Wishlist* lists in local storage.
