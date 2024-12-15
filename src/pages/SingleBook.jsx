@@ -3,7 +3,7 @@ import bannerImg from "../assets/bannerImg.png"
 import { CiStar } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { saveBookToLocalStorage, saveWishlistToLocalStorage } from "../utils/localFilemanagement";
-
+import { GridLoader } from "react-spinners";
 const SingleBook = () => {
     const { id } = useParams();
 
@@ -21,7 +21,7 @@ const SingleBook = () => {
 
     const book = books.find(book => book.bookId == id);
     if (loading) {
-        return <p>Loading book details...</p>;
+        return <div className="h-screen flex justify-center items-center"><GridLoader /></div>;
     }
     const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
     return (
