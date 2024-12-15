@@ -1,70 +1,79 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import bannerImg from "../assets/bannerImg.png"
 import { CiStar } from "react-icons/ci";
+import { useEffect, useState } from "react";
 
 const SingleBook = () => {
     const { id } = useParams();
-    const books = useLoaderData();
-    console.log("Params ID:", id);
 
-    // const book = books.find(book => book.bookId === params.id)
-    // const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
-    // console.log(books)
+    const [books, setBooks] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('/fakeData.json')
+            .then(res => res.json())
+            .then(data => {
+                setBooks(data);
+                setLoading(false);
+            })
+    }, [])
+
+    const book = books.find(book => book.bookId == id);
+    if (loading) {
+        return <p>Loading book details...</p>;
+    }
+    const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
+    console.log(book)
     return (
         <div className="my-20">
             <div className="flex gap-10 flex-col  md:flex-row">
-                <div className="bg-gray-50 rounded-2xl max-w-2xl">
-                    <img src={bannerImg} alt="" />
+                <div className="bg-gray-50 rounded-2xl max-w-xl flex justify-center items-center ">
+                    <img className="rounded-2xl w-2/3" src={image || bannerImg} alt="" />
                 </div>
                 <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-black my-3">The Catcher in the Rye</h3>
+                    <h3 className="text-2xl font-bold text-black my-3">{bookName}</h3>
                     <p className="text-gray-400 ">
-                        By : Awlad Hossain
+                        By : {author}
                     </p>
                     <hr className="my-4 border-b-2 border-dotted" ></hr>
 
-                    <div className="flex gap-4 justify-between ">
 
-                        <p className="text-gray-400 ">
-                            Fiction
-                        </p>
-                        <p className="text-gray-400 flex gap-3 items-center">
-                            5.00 <span> <CiStar className="text-2xl" /></span>
-                        </p>
-                    </div>
+
+                    <p className="text-gray-400 ">
+                        {category}
+                    </p>
+
+
                     <hr className="my-4 border-b-2 border-dotted" ></hr>
                     <p>
-                        <span className="text-black font-bold">Review : </span>
-                        Sit amet consectetur. Interdum porta pulvinar non sit aliquam. Aenean pulvinar blandit vel non enim elementum penatibus pellentesque ac. Nec accumsan euismod nulla adipiscing lectus. Morbi elementum a auctor erat diam tellus. Fermentum faucibus nulla enim ornare.
-                        Id neque neque pretium enim platea urna non dictum. Faucibus dignissim ridiculus nibh tristique massa non.
+                        <span className="text-black font-bold ">Review : </span>
+                        {review}
                     </p>
                     <div className="flex gap-5 my-4 items-center">
                         <p className="text-black font-bold">Tag : </p>
-                        <p className="text-[#23BE0A] p-2 rounded-lg">
-                            Young Adult
-                        </p>
-                        <p className="text-[#23BE0A] p-2 rounded-lg">
-                            Identity
-                        </p>
+                        {tags.map(tag => <p key={tag} className="text-[#23BE0A] p-2 rounded-lg font-bold">
+                            #{tag}
+                        </p>)}
+
                     </div>
                     <hr className="my-4 border-b-2 border-dotted" ></hr>
                     <table className="w-full">
                         <tbody>
                             <tr>
                                 <td className="  py-2">Number of Pages:</td>
-                                <td className="  py-2 font-semibold text-black">281</td>
+                                <td className="  py-2 font-semibold text-black">{totalPages}</td>
                             </tr>
                             <tr>
                                 <td className="  py-2">Publisher</td>
-                                <td className="  py-2 font-semibold text-black">J.B Lippincott & Co.</td>
+                                <td className="  py-2 font-semibold text-black">{publisher}</td>
                             </tr>
                             <tr>
                                 <td className="  py-2">Year of Publishing:</td>
-                                <td className="  py-2 font-semibold text-black">1960</td>
+                                <td className="  py-2 font-semibold text-black">{yearOfPublishing}</td>
                             </tr>
                             <tr>
                                 <td className="  py-2">Rating:</td>
-                                <td className="  py-2 font-semibold text-black">4.8</td>
+                                <td className="  py-2 font-semibold text-black">{rating}</td>
                             </tr>
                         </tbody>
                     </table>

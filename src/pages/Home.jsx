@@ -4,7 +4,6 @@ import BookCard from "../components/BookCard";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-    const loaderData = useLoaderData();
     const [books, setBooks] = useState([]);
 
 

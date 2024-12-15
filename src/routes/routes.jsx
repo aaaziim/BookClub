@@ -12,7 +12,6 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: "/",
-                loader: () => fetch('fakeData.json'),
                 element: <Home></Home>,
             },
             {
@@ -22,7 +21,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/listedbook/:id",
-
+                loader: ({ params }) => fetch('fakeData.json'),
                 element: <SingleBook ></SingleBook>
             },
             {
