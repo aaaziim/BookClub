@@ -1,8 +1,34 @@
 Website Name : BookClub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+### **Interactivity Functionality List**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Navbar:**
+  - Active route highlighting for dynamic navigation.
+
+- **Banner Button:**
+  - *View the List* button redirects to the *Listed Books* page.
+
+- **Book Cards:**
+  - Clicking on a book card redirects to the dynamic *Book Details* page.
+
+- **Read and Wishlist Buttons:**
+  - Adds books to *Read* or *Wishlist* lists in local storage.
+  - Toast/sweet alerts:
+    - First click: Confirms addition to the list.
+    - Subsequent click: Alerts that the book is already added.
+  - Prevents adding the book to wishlist if already in read list:
+    - Shows an alert if attempted.
+
+- **Listed Books Page:**
+  - Tab navigation to switch between *Read* and *Wishlist* book lists.
+  - Drop-down for sorting books by rating, total pages, or publishing year in descending order.
+  - *View Details* button redirects to the corresponding book's *Book Details* page.
+
+- **Pages to Read:**
+  - Custom shape bar chart dynamically displays *Read* list books' total pages against their names.
+
+- **404 Page:**
+  - User-friendly navigation upon accessing invalid routes. 
+
+These functionalities provide a smooth, interactive experience for users.
