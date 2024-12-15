@@ -15,22 +15,17 @@ const ListedBooks = () => {
         setTabIndex(location.pathname.endsWith("/wishlist") ? 1 : 0);
     }, [location.pathname]);
 
+
+
+
+
     return (
         <div>
             <div className="my-4">
                 <h2 className="text-2xl font-bold text-black text-center p-4 bg-gray-200 rounded-2xl">Books</h2>
             </div>
 
-            <div className="text-center">
-                <div className="dropdown">
-                    <div tabIndex={0} role="button" className="bg-[#23BE0A] px-4 py-2 rounded-lg text-white">Sort by <FaAngleDown className="inline" /></div>
-                    <ul tabIndex={0} className="dropdown-content menu bg-gray-50 px-4 py-2 rounded-lg text-black z-[1] w-52 p-2 shadow">
-                        <li><a>Rating</a></li>
-                        <li><a>Number of pages</a></li>
-                        <li><a>Publisher year</a></li>
-                    </ul>
-                </div>
-            </div>
+
 
             <div className="my-10">
                 <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800">

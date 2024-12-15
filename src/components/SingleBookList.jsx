@@ -44,7 +44,7 @@ const SingleBookList = ({ book, handleDelete }) => {
 
                         <p
                             onClick={() => handleDelete(book)}
-                            className="px-3 py-2 text-lg  bg-[#23BE0A] text-white rounded-xl"
+                            className="px-3 py-2 text-lg  bg-[#23BE0A] text-white rounded-xl cursor-pointer"
                         >Remove</p>
 
 
