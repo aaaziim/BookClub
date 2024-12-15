@@ -15,6 +15,7 @@ const Home = () => {
 
     return (
         <div>
+
             <Banner></Banner>
             <section className="my-20">
 

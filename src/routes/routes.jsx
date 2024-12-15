@@ -7,6 +7,8 @@ import SingleBook from "../pages/SingleBook"
 import BookList from "../components/BookList";
 import WishList from "../components/WishList";
 import ErrorPage from "../pages/ErrorPage";
+import SignIn from "../pages/SignIn";
+import SignUp from "../pages/SignUp";
 
 export const routes = createBrowserRouter([
     {
@@ -39,6 +41,14 @@ export const routes = createBrowserRouter([
             {
                 path: "/pagestoread",
                 element: <PagesToRead></PagesToRead>
+            },
+            {
+                path: "/signin",
+                element: <SignIn></SignIn>
+            },
+            {
+                path: "/signup",
+                element: <SignUp></SignUp>
             },
         ]
     }
