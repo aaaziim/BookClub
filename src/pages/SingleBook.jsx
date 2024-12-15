@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import bannerImg from "../assets/bannerImg.png"
 import { CiStar } from "react-icons/ci";
 import { useEffect, useState } from "react";
+import { saveBookToLocalStorage, saveWishlistToLocalStorage } from "../utils/localFilemanagement";
 
 const SingleBook = () => {
     const { id } = useParams();
@@ -23,7 +24,6 @@ const SingleBook = () => {
         return <p>Loading book details...</p>;
     }
     const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
-    console.log(book)
     return (
         <div className="my-20">
             <div className="flex gap-10 flex-col  md:flex-row">
@@ -78,8 +78,10 @@ const SingleBook = () => {
                         </tbody>
                     </table>
                     <div className="flex gap-4 my-6">
-                        <button type="button" className="px-8 py-3 font-semibold border rounded-xl dark:border-gray-500 dark:text-gray-800">Read</button>
-                        <button type="button" className="px-8 py-3 font-semibold border rounded-xl bg-[#50B1C9]   text-white">Wishlist</button>
+                        <button onClick={() => saveBookToLocalStorage(book)} type="button" className="px-8 py-3 font-semibold border rounded-xl dark:border-gray-500 dark:text-gray-800">Read</button>
+                        <button
+                            onClick={() => saveWishlistToLocalStorage(book)}
+                            type="button" className="px-8 py-3 font-semibold border rounded-xl bg-[#50B1C9]   text-white">Wishlist</button>
                     </div>
 
                 </div>
