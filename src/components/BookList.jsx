@@ -5,7 +5,7 @@ import { FaUserFriends } from "react-icons/fa";
 import { MdInsertPageBreak } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getBooksFromLocalStorage } from "../utils/localFilemanagement";
+import { getBooksFromLocalStorage, deleteBooks } from "../utils/localFilemanagement";
 import SingleBookList from "./SingleBookList";
 const BookList = () => {
 
@@ -17,11 +17,20 @@ const BookList = () => {
     }, [])
 
 
+    const handleDelete = (book) => {
+        deleteBooks(book);
+        const updatedBooks = getBooksFromLocalStorage();
+        setBooks(updatedBooks);
+    }
+
+
+
     return (
         <>
 
             {books.map(book => <SingleBookList key={book.bookId}
-                book={book}></SingleBookList>)}
+                book={book}
+                handleDelete={handleDelete}></SingleBookList>)}
 
 
         </>

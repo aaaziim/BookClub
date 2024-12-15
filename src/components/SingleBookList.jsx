@@ -3,7 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaUserFriends } from "react-icons/fa";
 import { MdInsertPageBreak } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-const SingleBookList = ({ book }) => {
+const SingleBookList = ({ book, handleDelete, wishlist }) => {
 
     const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
     return (
@@ -41,6 +41,13 @@ const SingleBookList = ({ book }) => {
                         <NavLink to={`/listedbook/${bookId}`}
                             className="px-3 py-2 text-lg  bg-[#23BE0A] text-white rounded-xl"
                         >View Details</NavLink>
+
+                        <p
+                            onClick={() => handleDelete(book)}
+                            className="px-3 py-2 text-lg  bg-[#23BE0A] text-white rounded-xl"
+                        >Remove</p>
+
+
                     </div>
 
                 </div>

@@ -44,3 +44,17 @@ export const saveWishlistToLocalStorage = (book) => {
     localStorage.setItem('wishlist', JSON.stringify(wishList));
     return toast.success('Book has been added to your Wishlist')
 };
+
+
+export const deleteWishlist = (book) => {
+    let savedWishlist = getWishlistFromLocalStorage();
+    const remainingWishlist = savedWishlist.filter(Wishlist => Wishlist.bookId !== book.bookId)
+    localStorage.setItem('wishlist', JSON.stringify(remainingWishlist))
+    return toast.success('Removed From Wishlist!')
+}
+export const deleteBooks = (book) => {
+    let savedBooks = getBooksFromLocalStorage();
+    const remainingBooks = savedBooks.filter(boook => boook.bookId !== book.bookId)
+    localStorage.setItem('booksList', JSON.stringify(remainingBooks))
+    return toast.success('Removed From Reading List!')
+}
